@@ -1,60 +1,77 @@
-
 variable "aws_region" {
-  description = "Região usada para criar os recursos da AWS"
+  description = "AWS region where the resources will be created"
   type        = string
   nullable    = false
 }
 
 variable "aws_vpc_name" {
-  description = "Colocar sempre a descrição"
+  description = "Name of the VPC to be created"
   type        = string
   nullable    = false
 }
 
 variable "aws_vpc_cidr" {
-  description = "Colocar sempre a descrição"
+  description = "CIDR block for the VPC to be created"
   type        = string
   nullable    = false
 }
 
 variable "aws_vpc_azs" {
-  description = "Colocar sempre a descrição"
+  description = "Availability zones where the VPC subnets will be created"
   type        = set(string)
   nullable    = false
 }
 
 variable "aws_vpc_private_subnets" {
-  description = "Colocar sempre a descrição"
+  description = "CIDR blocks for the private subnets of the VPC"
   type        = set(string)
   nullable    = false
 }
 
 variable "aws_vpc_public_subnets" {
-  description = "Colocar sempre a descrição"
+  description = "CIDR blocks for the public subnets of the VPC"
   type        = set(string)
   nullable    = false
 }
 
 variable "aws_eks_name" {
-  description = "Colocar sempre a descrição"
+  description = "Name of the EKS cluster to be created"
   type        = string
   nullable    = false
 }
 
 variable "aws_eks_version" {
-  description = "Colocar sempre a descrição"
+  description = "Kubernetes version for the EKS cluster to be created"
   type        = string
   nullable    = false
 }
 
 variable "aws_eks_managed_node_groups_instance_types" {
-  description = "Colocar sempre a descrição"
+  description = "Instance types for the EKS managed node group"
   type        = set(string)
   nullable    = false
 }
 
 variable "aws_project_tags" {
-  description = "Colocar sempre a descrição"
+  description = "Tags to be applied to the created resources"
   type        = map(any)
+  nullable    = false
+}
+
+variable "min_size" {
+  description = "Minimum size of the EKS managed node group"
+  type        = number
+  nullable    = false
+}
+
+variable "max_size" {
+  description = "Maximum size of the EKS managed node group"
+  type        = number
+  nullable    = false
+}
+
+variable "desired_size" {
+  description = "Desired size of the EKS managed node group"
+  type        = number
   nullable    = false
 }

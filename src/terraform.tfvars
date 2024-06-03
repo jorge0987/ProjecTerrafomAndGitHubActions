@@ -13,3 +13,7 @@ aws_project_tags = {
   Project     = "teste"
   Teste     = "ok"
 }
+
+min_size                                   = 2
+max_size                                   = 10
+desired_size                               = 2
