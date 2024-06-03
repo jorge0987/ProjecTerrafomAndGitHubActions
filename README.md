@@ -49,9 +49,6 @@ AWS_BUCKET_NAME => Name of the Bucket used to store the Terraform project state.
 
 AWS_BUCKET_FILE => Name of the file used to store the Terraform project state.
 
-## Solution Structure
-
-![Project Diagram](./diagramas/pipeline.drawio.png)
 
 ## Possible Project Evolutions
 
